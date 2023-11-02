@@ -1,9 +1,9 @@
 #Type of output and name of it
 set terminal pdf
-set output "Results/Unroll_8.pdf"
+set output "Results/Deb_gcc_Ofast.pdf"
 
 #Global Name
-set title 'MiB/s depending on optimization Flags'
+set title 'MiB/s depending on the Type of DGEMM'
 
 #Style of plot (explicit)
 set style data histograms
@@ -21,12 +21,12 @@ set bmargin at screen 0.3
 
 #Set label Name
 set ylabel 'MiB/s'
-set xlabel 'Type of Flags'
+set xlabel 'Type of Dgemm'
 
 #Set x labels names
-set xtics border in scale 0,5 nomirror rotate by -45
+set xtics border in scale 0,5 nomirror rotate by -90
 set xtics norangelimit 
 set xtics ()
 
-plot 'Results/UNROLL_8.dat' using 14:xticlabels(1) linecolor variable
+plot 'Results/dgemm_gcc_Ofast_debian.dat' using 14:xticlabels(1) linecolor variable
 pause -1 "Hit any key to continue"

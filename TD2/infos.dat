@@ -1,0 +1,4 @@
+For de Debian Files :
+	CPU set to max freq = CPU 1 
+	Freq is 1.80 GHz (i guess because it s the MAX_FREQ)
+	Process where pinned on CPU 

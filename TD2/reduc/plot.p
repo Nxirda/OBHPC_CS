@@ -1,9 +1,9 @@
 #Type of output and name of it
 set terminal pdf
-set output "Results/Unroll_8.pdf"
+set output "Results/Deb_gcc_O0.pdf"
 
 #Global Name
-set title 'MiB/s depending on optimization Flags'
+set title 'MiB/s depending on the Type of Reduction'
 
 #Style of plot (explicit)
 set style data histograms
@@ -17,16 +17,16 @@ set style fill   solid 1.00 border lt -1
 set key noautotitle nobox
 
 # Increase bottom margin to allow room for dates
-set bmargin at screen 0.3
+set bmargin at screen 0.5
 
 #Set label Name
 set ylabel 'MiB/s'
-set xlabel 'Type of Flags'
+set xlabel 'Type of Reduction'
 
 #Set x labels names
-set xtics border in scale 0,5 nomirror rotate by -45
+set xtics border in scale 0,5 nomirror rotate by -65
 set xtics norangelimit 
 set xtics ()
 
-plot 'Results/Unroll_8.dat' using 15:xticlabels(1) linecolor variable
+plot 'Results/reduc_gcc_O0_debian.dat' using 14:xticlabels(1) linecolor variable
 pause -1 "Hit any key to continue"

@@ -1,11 +1,11 @@
 CFLAGS=-g -Wall
 
-OFLAGS=-Ofast
+OFLAGS=-O0
 
 INTEL_LFLAGS=-qmkl
 GNU_LFLAGS=-lm -lcblas
 
-FILES=main.c tools.c kernels.c -I/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/Headers/
+FILES=main.c tools.c kernels.c #-I/Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk/System/Library/Frameworks/Accelerate.framework/Versions/A/Frameworks/vecLib.framework/Versions/A/Headers/
 
 all: dgemm
 
