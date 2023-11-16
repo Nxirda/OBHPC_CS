@@ -1,12 +1,14 @@
 #Type of output and name of it
 set terminal pdf
-set output "Results/Deb_gcc_Ofast.pdf"
+set output "Results/Global_Ofast.pdf"
 
 #Global Name
-set title 'MiB/s depending on the Dotprod Type'
+set title 'MiB/s depending on the Dotprod Type per Compiler'
 
 #Style of plot (explicit)
 set style data histograms
+
+set grid
 
 #Set distances between boxes
 set style histogram clustered gap 1 
@@ -24,9 +26,9 @@ set ylabel 'MiB/s'
 set xlabel 'Type of Dotprod'
 
 #Set x labels names
-set xtics border in scale 0,5 nomirror rotate by -0
+set xtics border in scale 0,5 nomirror rotate by -45
 set xtics norangelimit 
 set xtics ()
 
-plot 'Results/dgemm_gcc_Ofast_debian.dat' using 14:xticlabels(1) linecolor variable
+plot 'Results/Flag_Ofast/Global_Ofast.dat' using 14:xticlabels(1) linecolor variable
 pause -1 "Hit any key to continue"

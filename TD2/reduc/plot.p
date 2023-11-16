@@ -1,15 +1,17 @@
 #Type of output and name of it
 set terminal pdf
-set output "Results/Deb_gcc_O0.pdf"
+set output "Results/Global_Ofast.pdf"
 
 #Global Name
-set title 'MiB/s depending on the Type of Reduction'
+set title 'MiB/s depending on the Type of Reduction per Compiler'
 
 #Style of plot (explicit)
 set style data histograms
 
 #Set distances between boxes
 set style histogram clustered gap 1 
+
+set grid
 
 #Parameters of plot
 set boxwidth 0.9 absolute
@@ -28,5 +30,5 @@ set xtics border in scale 0,5 nomirror rotate by -65
 set xtics norangelimit 
 set xtics ()
 
-plot 'Results/reduc_gcc_O0_debian.dat' using 14:xticlabels(1) linecolor variable
+plot 'Results/Flag_Ofast/Global_Ofast.dat' using 14:xticlabels(1) linecolor variable
 pause -1 "Hit any key to continue"
